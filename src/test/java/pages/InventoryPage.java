@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class InverntoryPage extends BasePage{
+public class InventoryPage extends BasePage{
 
     private By product = By.id("add-to-cart-sauce-labs-fleece-jacket");
-    private By cartIcon = By.id("//*[@id=\"shopping_cart_container\"]/a");
+    private By cartIcon = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
 
-    public InverntoryPage(WebDriver driver, WebDriverWait webDriverWait) {
+    public InventoryPage(WebDriver driver, WebDriverWait webDriverWait) {
         super(driver, webDriverWait);
     }
 
@@ -24,5 +24,9 @@ public class InverntoryPage extends BasePage{
 
     public void addProductToCart(){
         getProduct().click();
+    }
+
+    public void clickAtCartIcon(){
+        getCartIcon().click();
     }
 }
